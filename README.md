@@ -23,6 +23,7 @@ This assignment is in the style of Test First. To start, fork and clone this rep
 
 1. Fork this repository
 2. `git clone https://github.com/YOURUSERNAME/guessingGame-Part2`
+3. `touch GuessingGame.js`
 3. `testem`
 3. Write the necessary functions to pass all the Jasmine test specs
 4. `git add .` Add your changes to the staging area.
