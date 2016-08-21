@@ -11,7 +11,7 @@ function generateWinningNumber() {
 }
 
 
-function playAgain() {
+function newGame() {
     return new Game(); //check that old game !== new game
 }
 

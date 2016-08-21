@@ -156,10 +156,10 @@ describe("Game class", function() {
             
         })
 
-        describe('playAgain function', function() {
+        describe('newGame function', function() {
             it('returns an empty, new game instance', function() {
                 spyOn(window, 'Game').and.callThrough();
-                game = playAgain();
+                game = newGame();
                 expect(game.playersGuess).toEqual(null);
                 expect(game.pastGuesses.length).toEqual(0);
                 expect(Game).toHaveBeenCalled();
