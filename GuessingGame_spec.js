@@ -1,11 +1,17 @@
 describe("generateWinningNumber function", function() {
     it('returns a random number between 1 and 100', function() {
+        //Math.random returns a decimal from 0 up to but not including 100
         spyOn(Math, 'random').and.returnValue(0.155);
         expect(generateWinningNumber()).toEqual(16)
         Math.random.and.returnValue(0.0000034);
         expect(generateWinningNumber()).toEqual(1);
+        //There is a tiny chance that Math.random will return 0. In this case, your function should return 1
+        Math.random.and.returnValue(0);
+        expect(generateWinningNumber()).toEqual(1);
         Math.random.and.returnValue(0.9999934);
         expect(generateWinningNumber()).toEqual(100);
+        Math.random.and.returnValue(0.63000);
+        expect(generateWinningNumber()).toEqual(64);
     });
 });
 
@@ -56,7 +62,7 @@ describe("Game class", function() {
         expect(typeof game.winningNumber).toEqual('number');
     });
 
-    describe("Methods on the Game Constructor Functions `.prototype`", function() {
+    describe("Methods on the Game Constructor Function's `.prototype`", function() {
 
         describe('difference function', function() {
             it('returns the absolute value of the difference between the playersGuess and winningNumber', function() {
